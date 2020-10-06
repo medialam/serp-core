@@ -11,7 +11,7 @@ use Serps\Core\Serp\ResultSet;
 /**
  * @covers Serps\Core\Serp\ResultSet
  */
-class ResultSetTest extends \PHPUnit_Framework_TestCase
+class ResultSetTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testAddItem()

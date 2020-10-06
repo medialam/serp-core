@@ -11,13 +11,13 @@ namespace Serps\Core\Url;
 interface AlterableUrlInterface extends UrlArchiveInterface
 {
 
-     /**
+    /**
      * Set the scheme.
      * ``foo`` in ``http://www.example.com#foo``
      * @param string $hash
      * @return $this
      */
-    public function setHash($hash);
+    public function setHash(string $hash);
 
     /**
      * Set the path.
@@ -25,25 +25,25 @@ interface AlterableUrlInterface extends UrlArchiveInterface
      * @param string $path
      * @return $this
      */
-    public function setPath($path);
+    public function setPath(string $path);
 
     /**
      * Set the port
      * @param int $port
      */
-    public function setPort($port);
+    public function setPort(int $port);
 
     /**
      * Set the user for auth
      * @param string $user
      */
-    public function setUser($user);
+    public function setUser(string $user);
 
     /**
      * Set the pass for auth
      * @param string $pass
      */
-    public function setPass($pass);
+    public function setPass(string $pass);
 
     /**
      * Set the scheme.
@@ -51,7 +51,7 @@ interface AlterableUrlInterface extends UrlArchiveInterface
      * @param string $scheme
      * @return $this
      */
-    public function setScheme($scheme);
+    public function setScheme(string $scheme);
 
     /**
      * Set the hostname.
@@ -59,7 +59,7 @@ interface AlterableUrlInterface extends UrlArchiveInterface
      * @param string $host the hostname
      * @return $this
      */
-    public function setHost($host);
+    public function setHost(string $host);
 
     /**
      * Add a parameter to the URL.
@@ -70,7 +70,7 @@ interface AlterableUrlInterface extends UrlArchiveInterface
      * to disable this encoding
      * @return $this
      */
-    public function setParam($name, $value, $raw = false);
+    public function setParam(string $name, string $value, $raw = false);
 
     /**
      * Remove current params and replace them with given params
@@ -83,5 +83,5 @@ interface AlterableUrlInterface extends UrlArchiveInterface
      * @param string $name name of the parameter to remove
      * @return $this;
      */
-    public function removeParam($name);
+    public function removeParam(string $name);
 }

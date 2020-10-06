@@ -12,7 +12,7 @@ use Serps\Core\Dom\NullDomNode;
 /**
  * @covers \Serps\Core\Dom\DomXpath
  */
-class DomXpathTest extends \PHPUnit_Framework_TestCase
+class DomXpathTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testNullDomNodeContext()

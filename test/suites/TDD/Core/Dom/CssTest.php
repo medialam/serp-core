@@ -12,7 +12,7 @@ use Symfony\Component\CssSelector\CssSelectorConverter;
 /**
  * @covers Serps\Core\Dom\Css
  */
-class CssTest extends \PHPUnit_Framework_TestCase
+class CssTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testToXpath()

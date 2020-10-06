@@ -16,7 +16,7 @@ use DOMElement;
  * @covers \Serps\Core\Dom\DomElement
  * @covers \Serps\Core\Dom\DomXpath
  */
-class DocumentWrapperTest extends \PHPUnit_Framework_TestCase
+class DocumentWrapperTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testDomNodeList()

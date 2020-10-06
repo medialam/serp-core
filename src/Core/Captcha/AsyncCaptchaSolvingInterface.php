@@ -15,7 +15,7 @@ interface AsyncCaptchaSolvingInterface
     /**
      * try to get the captcha for the given time
      * @param int $time max time to wait in milli second
-     * @param int $interval interval between 2 test in micro second
+     * @param int|null $interval interval between 2 test in micro second
      * @return null|mixed null if captcha is not solved yet
      */
     public function tryFor($time, $interval = null);

@@ -11,7 +11,7 @@ use Serps\Core\Serp\ResultSet;
 /**
  * @covers Serps\Core\Serp\BaseResult
  */
-class BaseResultTest extends \PHPUnit_Framework_TestCase
+class BaseResultTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testGetTypes()

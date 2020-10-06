@@ -5,8 +5,6 @@
 
 namespace Serps\Core\Media;
 
-use Serps\Core\Media\MediaInterface;
-
 class File extends AbstractMedia
 {
 

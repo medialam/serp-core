@@ -10,7 +10,7 @@ use Serps\Core\Cookie\Cookie;
 /**
  * @covers Serps\Core\Cookie\Cookie
  */
-class CookieTest extends \PHPUnit_Framework_TestCase
+class CookieTest extends \PHPUnit\Framework\TestCase
 {
 
     /**

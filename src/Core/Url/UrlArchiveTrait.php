@@ -12,7 +12,7 @@ use Serps\Core\UrlArchive;
 
 /**
  * This trait offers implementation for @see UrlArchiveInterface
- * @method static build($scheme, $host, $path=null, array $query=[], $hash = null, $port = null, $user = null, $pass)
+ * @method static build($scheme, $host, $path=null, array $query=[], $hash = null, $port = null, $user = null, $pass = null)
  */
 trait UrlArchiveTrait
 {
@@ -78,6 +78,8 @@ trait UrlArchiveTrait
      * Inspired by @elyobo solution (see link)
      *
      * @link https://gist.github.com/elyobo/6200838
+     * @param $str
+     * @return array
      */
     public static function parseStr($str)
     {
@@ -175,7 +177,7 @@ trait UrlArchiveTrait
      * @param string $url the url to parse
      * @return static
      */
-    public static function fromString($url)
+    public static function fromString(string $url)
     {
         $urlItems = self::parseUrl($url);
         return static::fromArray($urlItems);
@@ -250,7 +252,7 @@ trait UrlArchiveTrait
      * @param mixed $default
      * @return mixed
      */
-    public function getParamValue($name, $default = null)
+    public function getParamValue(string $name, $default = null)
     {
         if (isset($this->query[$name])) {
             return $this->query[$name]->getValue();
@@ -263,7 +265,7 @@ trait UrlArchiveTrait
      * @param mixed $default
      * @return mixed
      */
-    public function getParamRawValue($name, $default = null)
+    public function getParamRawValue(string $name, $default = null)
     {
         if (isset($this->query[$name])) {
             return $this->query[$name]->getRawValue();
@@ -275,7 +277,7 @@ trait UrlArchiveTrait
      * @param string $name
      * @return bool
      */
-    public function hasParam($name)
+    public function hasParam(string $name)
     {
         return isset($this->query[$name]);
     }
@@ -425,9 +427,12 @@ trait UrlArchiveTrait
     }
 
     /**
+     * @param string $url
+     * @param null $as
+     * @return AlterableUrlInterface|\Serps\Core\Url\UrlArchiveInterface
      * @see UrlArchiveInterface::resolve
      */
-    public function resolve($url, $as = null)
+    public function resolve(string $url, $as = null)
     {
         if (null === $as) {
             $as = static::class;
@@ -460,7 +465,7 @@ trait UrlArchiveTrait
         }
     }
 
-    public function resolveAsString($url)
+    public function resolveAsString(string $url)
     {
         return $this->resolveAsAlterableUrl($url, Url::class)->buildUrl();
     }

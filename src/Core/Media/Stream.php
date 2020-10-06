@@ -14,7 +14,7 @@ class Stream extends AbstractMedia
 
     /**
      * Binary constructor.
-     * @param $data
+     * @param $stream
      */
     public function __construct($stream)
     {

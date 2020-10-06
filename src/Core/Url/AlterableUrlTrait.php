@@ -16,7 +16,7 @@ trait AlterableUrlTrait
      * @param string $hash
      * @return $this
      */
-    public function setHash($hash)
+    public function setHash(string $hash)
     {
         $this->hash = $hash;
         return $this;
@@ -28,7 +28,7 @@ trait AlterableUrlTrait
      * @param string $path
      * @return $this
      */
-    public function setPath($path)
+    public function setPath(string $path)
     {
         $this->path = $path;
         return $this;
@@ -38,7 +38,7 @@ trait AlterableUrlTrait
      * Set the port
      * @param int $port
      */
-    public function setPort($port)
+    public function setPort(int $port)
     {
         $this->port = $port;
     }
@@ -47,7 +47,7 @@ trait AlterableUrlTrait
      * Set the user for auth
      * @param string $user
      */
-    public function setUser($user)
+    public function setUser(string $user)
     {
         $this->user = $user;
     }
@@ -56,7 +56,7 @@ trait AlterableUrlTrait
      * Set the pass for auth
      * @param string $pass
      */
-    public function setPass($pass)
+    public function setPass(string $pass)
     {
         $this->pass = $pass;
     }
@@ -66,9 +66,9 @@ trait AlterableUrlTrait
      * Set the scheme.
      * ``http`` in ``http://www.example.com``
      * @param string $scheme
-     * @return $this
+     * @return void
      */
-    public function setScheme($scheme)
+    public function setScheme(string $scheme)
     {
         $this->scheme = $scheme;
     }
@@ -80,7 +80,7 @@ trait AlterableUrlTrait
      * @param string $host the hostname
      * @return $this
      */
-    public function setHost($host)
+    public function setHost(string $host)
     {
         $this->host = $host;
         return $this;
@@ -96,7 +96,7 @@ trait AlterableUrlTrait
      * to disable this encoding
      * @return $this
      */
-    public function setParam($name, $value, $raw = false)
+    public function setParam(string $name, string $value, $raw = false)
     {
         $this->query[$name] = new QueryParam($name, $value, $raw);
         return $this;
@@ -127,7 +127,7 @@ trait AlterableUrlTrait
      * @param string $name name of the parameter to remove
      * @return $this;
      */
-    public function removeParam($name)
+    public function removeParam(string $name)
     {
         if (isset($this->query[$name])) {
             unset($this->query[$name]);

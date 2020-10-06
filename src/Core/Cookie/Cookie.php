@@ -170,7 +170,7 @@ class Cookie
     /**
      * Gets an array of invalid cookie characters
      *
-     * @return array
+     * @return string
      */
     protected static function getInvalidCharacters()
     {
@@ -212,7 +212,7 @@ class Cookie
 
     /**
      * Formats the cookie into a json string to make it exportable.
-     * @return string a json representation of the cookie
+     * @return array a json representation of the cookie
      */
     public function export()
     {

@@ -7,12 +7,12 @@ namespace Serps\Test\Core\Psr7\Proxy;
 
 use Psr\Http\Message\RequestInterface;
 use Serps\Core\Psr7\RequestBuilder;
-use Zend\Diactoros\Stream;
+use Laminas\Diactoros\Stream;
 
-use Zend\Diactoros\Request as DiactorosRequest;
+use Laminas\Diactoros\Request as DiactorosRequest;
 use GuzzleHttp\Psr7\Request as GuzzleRequest;
 
-class RequestBuilderTest extends \PHPUnit_Framework_TestCase
+class RequestBuilderTest extends \PHPUnit\Framework\TestCase
 {
 
     /**
@@ -21,7 +21,7 @@ class RequestBuilderTest extends \PHPUnit_Framework_TestCase
     public function testBuildEmptyRequestRequest($builder, $expectedClass, $url = null, $method = null, $headers = [], $body = null)
     {
         $body = new Stream('php://temp', 'r+');
-        $body->write($body ? $body : '');
+        $body->write($body->getContents() ? $body->getContents() : '');
         $expectedRequest = new DiactorosRequest($url, $method ? $method : 'GET', $body, $headers);
 
         $testedRequest = $builder->invokeArgs(null, [$url, $method, $headers, $body]);
@@ -48,7 +48,7 @@ class RequestBuilderTest extends \PHPUnit_Framework_TestCase
 
     public function requestProvider()
     {
-        $diactorosBuilder = $this->getBuilderMethod('requestFromZendDiactoros');
+        $diactorosBuilder = $this->getBuilderMethod('requestFromLaminasDiactoros');
         $guzzlebuilder    = $this->getBuilderMethod('requestFromGuzzlePSR7');
         $globalBuilder    = $this->getBuilderMethod('buildRequest');
 

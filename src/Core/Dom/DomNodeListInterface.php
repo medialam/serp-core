@@ -17,14 +17,14 @@ interface DomNodeListInterface extends \Countable, \Iterator
 
     /**
      * Check if at least one of the elements in the collection as all the given classes
-     * @param $className
+     * @param array $classNames
      * @return bool
      */
     public function hasClasses(array $classNames);
 
     /**
      * Check if at least one of the elements in the collection as one of the given classes
-     * @param $className
+     * @param array $classNames
      * @return bool
      */
     public function hasAnyClass(array $classNames);

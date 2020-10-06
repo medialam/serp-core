@@ -32,9 +32,9 @@ interface CookieJarInterface
      * the specified path within that domain are removed. If given all three arguments, then the cookie with the
      * specified name, path and domain is removed.
      *
-     * @param string $domain Set to clear only cookies matching a domain
-     * @param string $path   Set to clear only cookies matching a domain and path
-     * @param string $name   Set to clear only cookies matching a domain, path, and name
+     * @param string|null $domain Set to clear only cookies matching a domain
+     * @param string|null $path   Set to clear only cookies matching a domain and path
+     * @param string|null $name   Set to clear only cookies matching a domain, path, and name
      *
      * @return CookieJarInterface
      */
@@ -70,9 +70,9 @@ interface CookieJarInterface
     /**
      * Get all of the matching cookies
      *
-     * @param string $domain          Domain of the cookie
-     * @param string $path            Path of the cookie
-     * @param string $name            Name of the cookie
+     * @param string|null $domain          Domain of the cookie
+     * @param string|null $path            Path of the cookie
+     * @param string|null $name            Name of the cookie
      * @param bool   $skipDiscardable Set to TRUE to skip cookies with the Discard attribute.
      * @param bool   $skipExpired     Set to FALSE to include expired
      *

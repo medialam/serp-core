@@ -13,7 +13,7 @@ use Serps\Core\Serp\ResultSet;
 /**
  * @covers Serps\Core\Serp\CompositeResultSet
  */
-class CompositeResultSetTest extends \PHPUnit_Framework_TestCase
+class CompositeResultSetTest extends \PHPUnit\Framework\TestCase
 {
 
     /**
@@ -120,14 +120,14 @@ class CompositeResultSetTest extends \PHPUnit_Framework_TestCase
 
     public function testOffsetSet()
     {
-        $this->setExpectedException('Exception');
+        $this->expectException('Exception');
         $c = new CompositeResultSet();
         $c['foo'] = 'bar';
     }
 
     public function testOffsetUnset()
     {
-        $this->setExpectedException('Exception');
+        $this->expectException('Exception');
         $c = new CompositeResultSet();
         unset($c['foo']);
     }

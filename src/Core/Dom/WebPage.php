@@ -6,9 +6,9 @@
 namespace Serps\Core\Dom;
 
 use Psr\Http\Message\RequestInterface;
-use Psr\Http\Message\UriInterface;
 use Serps\Core\Psr7\RequestBuilder;
 use Serps\Core\Url\UrlArchiveInterface;
+use Serps\Exception;
 
 class WebPage extends DocumentWrapper
 {
@@ -137,8 +137,9 @@ class WebPage extends DocumentWrapper
      * @param bool $submit @see formGetData
      * @param RequestInterface|null $request an optional request instance to fill with the form preset.
      * If this parameter is omitted the method will try to find a request builder
-     * from zendframework/zend-diactoros or guzzlehttp/psr7
+     * from Laminasframework/Laminas-diactoros or guzzlehttp/psr7
      * @return RequestInterface
+     * @throws Exception
      */
     public function requestFromForm(
         \DOMElement $formNode,

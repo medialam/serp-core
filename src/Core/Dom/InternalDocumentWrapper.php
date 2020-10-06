@@ -5,6 +5,9 @@
 
 namespace Serps\Core\Dom;
 
+use DOMDocument;
+use DOMNode;
+
 /**
  * @internal
  */
@@ -12,7 +15,7 @@ class InternalDocumentWrapper
 {
 
     /**
-     * @var \DOMDocument
+     * @var DOMDocument
      */
     protected $dom;
 
@@ -20,10 +23,10 @@ class InternalDocumentWrapper
 
     /**
      * Transforms the given dom node to a domNodeInterface instance
-     * @param \DOMNode|null $item
+     * @param DOMNode|null $item
      * @return DomNodeInterface
      */
-    public static function toDomNodeInterface(\DOMNode $item = null)
+    public static function toDomNodeInterface(DOMNode $item = null)
     {
         if (!$item) {
             return new NullDomNode();
@@ -38,9 +41,9 @@ class InternalDocumentWrapper
 
     /**
      * InternalDocumentWrapper constructor.
-     * @param \DOMDocument $dom
+     * @param DOMDocument $dom
      */
-    public function __construct(\DOMDocument $dom)
+    public function __construct(DOMDocument $dom)
     {
         $this->dom = $dom;
     }
@@ -58,7 +61,7 @@ class InternalDocumentWrapper
     }
 
     /**
-     * @return \DOMDocument
+     * @return DOMDocument
      */
     public function getDom()
     {
@@ -73,7 +76,7 @@ class InternalDocumentWrapper
      * @link http://php.net/manual/en/domxpath.query.php
      *
      * @param string $query the xpath query
-     * @param \DOMNode|null $node the context node for the query, leave it null to query the root
+     * @param DOMNode|null $node the context node for the query, leave it null to query the root
      * @return DomNodeList
      */
     public function xpathQuery($query, $node = null)
@@ -87,7 +90,7 @@ class InternalDocumentWrapper
      * @link http://php.net/manual/en/domxpath.query.php
      *
      * @param string $query the css query
-     * @param \DOMNode|null $node the context node for the query, leave it null to query the root
+     * @param DOMNode|null $node the context node for the query, leave it null to query the root
      * @return DomNodeList
      */
     public function cssQuery($query, $node = null)

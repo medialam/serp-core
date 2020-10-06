@@ -37,7 +37,7 @@ class ResultSet implements ResultSetInterface
     /**
      * Get all the results matching one of the given types
      * @param array ...$types
-     * @return ItemPosition[]
+     * @return ResultSet
      */
     public function getResultsByType($types)
     {

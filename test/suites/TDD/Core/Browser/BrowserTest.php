@@ -11,14 +11,14 @@ use Serps\Core\Http\Proxy;
 use Serps\Core\Http\StackingHttpClient;
 use Serps\Core\Browser\Browser;
 use Serps\Core\Psr7\RequestBuilder;
-use Zend\Diactoros\Request;
+use Laminas\Diactoros\Request;
 
 /**
  * @covers Serps\Core\Http\StackingHttpClient
  * @covers Serps\Core\Browser\Browser
  * @covers Serps\Core\Browser\AbstractBrowser
  */
-class BrowserTest extends \PHPUnit_Framework_TestCase
+class BrowserTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testSendRequest()

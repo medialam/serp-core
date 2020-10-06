@@ -5,9 +5,6 @@
 
 namespace Serps\Core\Serp;
 
-use Serps\Core\Serp\ResultDataInterface;
-use Traversable;
-
 /**
  * @method ItemPosition[] getItems()
  */

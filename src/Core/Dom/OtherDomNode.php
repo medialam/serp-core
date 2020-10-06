@@ -5,18 +5,20 @@
 
 namespace Serps\Core\Dom;
 
+use DOMNode;
+
 class OtherDomNode implements DomNodeInterface
 {
     /**
-     * @var \DOMNode
+     * @var DOMNode
      */
     protected $domNode;
 
     /**
      * OtherDomNode constructor.
-     * @param \DOMNode $domNode
+     * @param DOMNode $domNode
      */
-    public function __construct(\DOMNode $domNode)
+    public function __construct(DOMNode $domNode)
     {
         $this->domNode = $domNode;
     }

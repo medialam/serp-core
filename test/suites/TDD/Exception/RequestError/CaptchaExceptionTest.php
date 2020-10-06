@@ -11,12 +11,12 @@ use Serps\Exception\RequestError\CaptchaException;
 /**
  * @covers Serps\Exception\RequestError\CaptchaException
  */
-class CaptchaExceptionTest extends \PHPUnit_Framework_TestCase
+class CaptchaExceptionTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testCaptchaException()
     {
-        $captchaResponse = $this->getMock(CaptchaResponse::class);
+        $captchaResponse = $this->createMock(CaptchaResponse::class);
         $captchaException = new CaptchaException($captchaResponse);
 
         $this->assertSame($captchaResponse, $captchaException->getCaptcha());

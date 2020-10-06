@@ -7,13 +7,13 @@ namespace Serps\Test\Core\Cookie;
 
 use Serps\Core\Cookie\ArrayCookieJar;
 use Serps\Core\Cookie\Cookie;
-use Zend\Diactoros\Request;
+use Laminas\Diactoros\Request;
 
 /**
  * @covers Serps\Core\Cookie\ArrayCookieJar
  * @covers Serps\Core\Cookie\Cookie
  */
-class ArrayCookieJarTest extends \PHPUnit_Framework_TestCase
+class ArrayCookieJarTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testSet()

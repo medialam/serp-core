@@ -26,7 +26,7 @@ class BaseResult implements ResultDataInterface
     }
 
     /**
-     * @param array ...$type
+     * @param $types
      * @return bool
      */
     public function is($types)

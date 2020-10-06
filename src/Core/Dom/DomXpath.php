@@ -18,7 +18,7 @@ class DomXpath extends BaseDomXpath
 
     /**
      * DomXpath constructor.
-     * @param DocumentWrapper $doc
+     * @param InternalDocumentWrapper $doc
      */
     public function __construct(InternalDocumentWrapper $doc)
     {

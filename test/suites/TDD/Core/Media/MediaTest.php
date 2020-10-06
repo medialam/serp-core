@@ -21,7 +21,7 @@ use Serps\Core\Media\Stream;
  * @covers Serps\Core\Media\Stream
  * @covers Serps\Core\Media\AbstractMedia
  */
-class MediaTest extends \PHPUnit_Framework_TestCase
+class MediaTest extends \PHPUnit\Framework\TestCase
 {
 
     public function mediaProvider()
@@ -61,7 +61,7 @@ class MediaTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($baseData, $media->asString());
         $this->assertEquals($baseData, $media->__toString());
         $this->assertEquals($baseData, base64_decode($media->asBase64()));
-        $this->assertInternalType('resource', $media->asStream());
+        $this->assertIsResource($media->asStream());
         $this->assertEquals($baseData, stream_get_contents($media->asStream()));
 
         $tempFile = tempnam(sys_get_temp_dir(), 'serps-test.');

@@ -19,12 +19,12 @@ interface UrlArchiveInterface
      * UrlInterface constructor.
      * @param string $scheme
      * @param string $host
-     * @param string $path
+     * @param string|null $path
      * @param QueryParam[]|array $query
-     * @param string $hash
-     * @param int $port
-     * @param string $user
-     * @param string $pass
+     * @param string|null $hash
+     * @param int|null $port
+     * @param string|null $user
+     * @param string|null $pass
      * @return static
      */
     public static function build(
@@ -39,13 +39,12 @@ interface UrlArchiveInterface
     );
 
 
-
     /**
      * Builds an url instance from an url string
      * @param string $url the url to parse
      * @return static
      */
-    public static function fromString($url);
+    public static function fromString(string $url);
 
 
     /**
@@ -126,7 +125,7 @@ interface UrlArchiveInterface
      * @param mixed $default
      * @return mixed
      */
-    public function getParamValue($name, $default = null);
+    public function getParamValue(string $name, $default = null);
 
 
     /**
@@ -134,13 +133,13 @@ interface UrlArchiveInterface
      * @param mixed $default
      * @return mixed
      */
-    public function getParamRawValue($name, $default = null);
+    public function getParamRawValue(string $name, $default = null);
 
     /**
      * @param string $name
      * @return bool
      */
-    public function hasParam($name);
+    public function hasParam(string $name);
 
     /**
      * Get the authority of the url
@@ -174,18 +173,18 @@ interface UrlArchiveInterface
      * or null to use self
      * @return UrlArchiveInterface the generated url
      */
-    public function resolve($url, $as = null);
+    public function resolve(string $url, $as = null);
 
 
     /**
      * @param string $url the absolute or relative url to resolve
      * @return string the generated url
      */
-    public function resolveAsString($url);
+    public function resolveAsString(string $url);
 
     /**
      * clone the given url as an instance of the given class name
-     * @param string $as class name to resolve to
+     * @param string|null $as class name to resolve to
      * @return UrlArchiveInterface
      */
     public function cloneAs($as = null);

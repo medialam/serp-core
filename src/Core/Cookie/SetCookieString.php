@@ -97,7 +97,7 @@ abstract class SetCookieString
      *
      * @return string
      */
-    protected static function getDefaultPath($path)
+    protected static function getDefaultPath(string $path)
     {
         // "The user agent MUST use an algorithm equivalent to the following algorithm
         // to compute the default-path of a cookie:"

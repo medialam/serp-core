@@ -7,12 +7,11 @@ namespace Serps\Test\Core\Dom;
 
 use Serps\Core\Dom\WebPage;
 use Serps\Core\Url;
-use Zend\Diactoros\Request;
 
 /**
  * @covers Serps\Core\Dom\WebPage
  */
-class WebPageTest extends \PHPUnit_Framework_TestCase
+class WebPageTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testParseForm()
@@ -35,7 +34,7 @@ EOF;
 
         $request = $webpage->requestFromForm($form);
 
-        $this->assertEquals('http://example.com?foo=bar&bar', (string) $request->getUri());
+        $this->assertEquals('http://:@example.com?foo=bar&bar', (string) $request->getUri());
         $this->assertEquals('get', strtolower($request->getMethod()));
     }
 
@@ -56,7 +55,7 @@ EOF;
 
         $request = $webpage->requestFromForm($form);
 
-        $this->assertEquals('http://example.com', (string) $request->getUri());
+        $this->assertEquals('http://:@example.com', (string) $request->getUri());
         $this->assertEquals('foo=bar', (string) $request->getBody());
         $this->assertEquals('post', strtolower($request->getMethod()));
     }
@@ -105,7 +104,7 @@ EOF;
 
         $request = $webpage->requestFromForm($form);
 
-        $this->assertEquals('http://example.com/formAction?foo=2&baz=3&qux=3&qux=4&qux=6&qux=2', (string) $request->getUri());
+        $this->assertEquals('http://:@example.com/formAction?foo=2&baz=3&qux=3&qux=4&qux=6&qux=2', (string) $request->getUri());
     }
 
     public function testWithData()
@@ -130,10 +129,10 @@ EOF;
         $form = $webpage->cssQuery('form')->item(0);
 
         $request = $webpage->requestFromForm($form, ['foo' => 'homer', 'baz' => 'simpson']);
-        $this->assertEquals('http://example.com/formAction?foo=homer&bar', (string) $request->getUri());
+        $this->assertEquals('http://:@example.com/formAction?foo=homer&bar', (string) $request->getUri());
         // Same but non strict
         $request = $webpage->requestFromForm($form, ['foo' => 'homer', 'baz' => 'simpson'], false);
-        $this->assertEquals('http://example.com/formAction?foo=homer&bar&baz=simpson', (string) $request->getUri());
+        $this->assertEquals('http://:@example.com/formAction?foo=homer&bar&baz=simpson', (string) $request->getUri());
     }
 
     public function testNamedSubmitWithValue()
@@ -154,7 +153,7 @@ EOF;
         $form = $webpage->cssQuery('form')->item(0);
 
         $request = $webpage->requestFromForm($form);
-        $this->assertEquals('http://example.com/formAction?bar&foo=baz', (string) $request->getUri());
+        $this->assertEquals('http://:@example.com/formAction?bar&foo=baz', (string) $request->getUri());
     }
 
     public function testNamedSubmitWithoutValue()
@@ -175,7 +174,7 @@ EOF;
         $form = $webpage->cssQuery('form')->item(0);
 
         $request = $webpage->requestFromForm($form);
-        $this->assertEquals('http://example.com/formAction?bar&foo=Submit', (string) $request->getUri());
+        $this->assertEquals('http://:@example.com/formAction?bar&foo=Submit', (string) $request->getUri());
     }
 
     public function testAnonymousSubmit()
@@ -196,7 +195,7 @@ EOF;
         $form = $webpage->cssQuery('form')->item(0);
 
         $request = $webpage->requestFromForm($form);
-        $this->assertEquals('http://example.com/formAction?bar', (string) $request->getUri());
+        $this->assertEquals('http://:@example.com/formAction?bar', (string) $request->getUri());
     }
 
     public function testDisabledSubmit()
@@ -217,7 +216,7 @@ EOF;
         $form = $webpage->cssQuery('form')->item(0);
 
         $request = $webpage->requestFromForm($form);
-        $this->assertEquals('http://example.com/formAction?bar&bar=qux', (string) $request->getUri());
+        $this->assertEquals('http://:@example.com/formAction?bar&bar=qux', (string) $request->getUri());
     }
 
     public function testNamedButtonSubmitWithValue()
@@ -239,7 +238,7 @@ EOF;
         $form = $webpage->cssQuery('form')->item(0);
 
         $request = $webpage->requestFromForm($form);
-        $this->assertEquals('http://example.com/formAction?bar&foobutton=foobar', (string) $request->getUri());
+        $this->assertEquals('http://:@example.com/formAction?bar&foobutton=foobar', (string) $request->getUri());
     }
 
     public function testNamedButtonSubmitWithoutValue()
@@ -261,6 +260,6 @@ EOF;
         $form = $webpage->cssQuery('form')->item(0);
 
         $request = $webpage->requestFromForm($form);
-        $this->assertEquals('http://example.com/formAction?bar&foobutton=', (string) $request->getUri());
+        $this->assertEquals('http://:@example.com/formAction?bar&foobutton=', (string) $request->getUri());
     }
 }

@@ -23,7 +23,7 @@ class DomNodeList implements DomNodeListInterface
     /**
      * DomNodeList constructor.
      * @param BaseDomNodeList $list
-     * @param DocumentWrapper $doc
+     * @param InternalDocumentWrapper $doc
      */
     public function __construct(BaseDomNodeList $list, InternalDocumentWrapper $doc)
     {

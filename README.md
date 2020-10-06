@@ -13,7 +13,7 @@ Install
 Install it using [composer](https://getcomposer.org/) with the package 
 [serps/core](https://packagist.org/packages/serps/core) : 
 
-``composer require 'serps/core'``
+``composer require 'medialam/serp-core'``
 
 Documentation
 -------------

@@ -30,7 +30,7 @@ class StackingHttpClient implements \Countable, HttpClientInterface
     }
 
     /**
-     * @return []
+     * @return array []
      */
     public function getStack()
     {

@@ -11,10 +11,10 @@ class DocumentWrapper extends InternalDocumentWrapper
 
     /**
      * @param string $domString the dom document as a string
-     * @param string $defaultEncoding encoding of the document.
+     * @param string|null $defaultEncoding encoding of the document.
      * Only useful if the document does not define xml properties at beginning of the document. Default to 'UTF-8'
      */
-    public function __construct($domString, $defaultEncoding = null)
+    public function __construct(string $domString, $defaultEncoding = null)
     {
         // if xml tag is already specified we leave it as it is
         // but if it's note the case we will use the given encoding

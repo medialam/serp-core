@@ -10,7 +10,7 @@ use Serps\Core\Http\Proxy;
 /**
  * @covers Serps\Core\Http\Proxy
  */
-class ProxyTest extends \PHPUnit_Framework_TestCase
+class ProxyTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testProxy()

@@ -14,7 +14,7 @@ class AsyncCaptchaSolvingCallback implements AsyncCaptchaSolvingInterface
 
     /**
      * @param callable $getCaptcha handler called to get captcha if it  was solved
-     * @param int $tryFprDefaultDelay default delay to use in the tryFor() method
+     * @param int $tryForDefaultDelay default delay to use in the tryFor() method
      */
     public function __construct(callable $getCaptcha, $tryForDefaultDelay = 1000)
     {
@@ -38,7 +38,7 @@ class AsyncCaptchaSolvingCallback implements AsyncCaptchaSolvingInterface
     /**
      * try to get the captcha for the given time
      * @param int $time max time to wait in second
-     * @param int $interval interval between 2 test in second
+     * @param int|null $interval interval between 2 test in second
      * @return null|mixed
      */
     public function tryFor($time, $interval = null)

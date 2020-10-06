@@ -14,7 +14,7 @@ use Serps\Core\UrlArchive;
  * @covers Serps\Core\Url\AlterableUrlTrait
  * @covers Serps\Core\Url\UrlArchiveTrait
  */
-class UrlTest extends \PHPUnit_Framework_TestCase
+class UrlTest extends \PHPUnit\Framework\TestCase
 {
 
 
@@ -255,7 +255,7 @@ class UrlTest extends \PHPUnit_Framework_TestCase
 
         // Resolve as string
         $newUrl = $url->resolveAsString('//bar');
-        $this->assertInternalType('string', $newUrl);
+        $this->assertIsString($newUrl);
         $this->assertEquals('https://bar', $newUrl);
     }
 
@@ -311,7 +311,7 @@ class UrlTest extends \PHPUnit_Framework_TestCase
     {
         $url = Url::fromString('https://foo/bar?qux=baz');
 
-        $this->setExpectedException(\InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $url->resolve('//bar', []);
     }
 
@@ -319,7 +319,7 @@ class UrlTest extends \PHPUnit_Framework_TestCase
     {
         $url = Url::fromString('https://foo/bar?qux=baz');
 
-        $this->setExpectedException(\InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $url->resolve('//bar', Cookie::class);
     }
 

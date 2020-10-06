@@ -10,7 +10,7 @@ use Serps\Core\Url\QueryParam;
 /**
  * @covers Serps\Core\Url\QueryParam
  */
-class QueryParamTest extends \PHPUnit_Framework_TestCase
+class QueryParamTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testIsRaw()

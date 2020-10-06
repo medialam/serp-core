@@ -14,6 +14,7 @@ class MediaFactory
      * Helper that creates the media object given a string from a html src attribute
      * @param $src
      * @return MediaInterface
+     * @throws Exception
      */
     public static function createMediaFromSrc($src)
     {

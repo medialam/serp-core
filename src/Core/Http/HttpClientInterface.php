@@ -15,7 +15,7 @@ interface HttpClientInterface
      * Sends a request with an optional given proxy and returns the http response
      *
      * @param RequestInterface $request
-     * @param ProxyInterface $proxy
+     * @param ProxyInterface|null $proxy
      * @param CookieJarInterface|null $cookieJar
      * @return SearchEngineResponse
      */

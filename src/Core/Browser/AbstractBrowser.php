@@ -103,14 +103,12 @@ abstract class AbstractBrowser implements BrowserInterface
     {
         $headers = $this->getDefaultHeaders();
 
-        $request = RequestBuilder::buildRequest(
+        return RequestBuilder::buildRequest(
             (string) $url,
             'GET',
             $headers,
             'php://memory'
         );
-
-        return $request;
     }
 
     /**

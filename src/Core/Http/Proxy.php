@@ -23,7 +23,7 @@ class Proxy implements ProxyInterface
      * @param string|null $password password if proxy needs credentials
      * @param string $type proxy type: one of "HTTP", "HTTPS", "SOCKS4", "SOCKS5". This will be automatically uppercased
      */
-    public function __construct($host, $port, $user = null, $password = null, $type = 'HTTP')
+    public function __construct(string $host, int $port, $user = null, $password = null, $type = 'HTTP')
     {
         $this->host       = $host;
         $this->port     = $port;

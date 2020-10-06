@@ -11,7 +11,7 @@ use Serps\Core\UrlArchive;
 /**
  * @covers Serps\Core\Http\SearchEngineResponse
  */
-class SearchEngineResponseTest extends \PHPUnit_Framework_TestCase
+class SearchEngineResponseTest extends \PHPUnit\Framework\TestCase
 {
 
 

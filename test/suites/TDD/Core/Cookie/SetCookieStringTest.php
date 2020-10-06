@@ -11,7 +11,7 @@ use Serps\Core\Cookie\SetCookieString;
  * @covers Serps\Core\Cookie\SetCookieString
  * @covers Serps\Core\Cookie\Cookie
  */
-class SetCookieStringTest extends \PHPUnit_Framework_TestCase
+class SetCookieStringTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testParseCookie()
@@ -20,7 +20,7 @@ class SetCookieStringTest extends \PHPUnit_Framework_TestCase
         $expiresTime = time();
         $cookieString = 'foo=bar; path=/; domain=.foo.com;';
         $cookieString .=' expires=' . gmdate('D, d M Y H:i:s T', $expiresTime);
-        
+
         $cookie = SetCookieString::parse($cookieString, 'foo.com', '/bar');
 
         $this->assertEquals('foo', $cookie->getName());

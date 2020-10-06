@@ -5,7 +5,6 @@
 
 namespace Serps\Core\Http;
 
-use Serps\Core\Cookie\Cookie;
 use Serps\Core\UrlArchive;
 
 class SearchEngineResponse
@@ -24,7 +23,7 @@ class SearchEngineResponse
 
 
     /**
-     * @param $httpResponseHeaders [] the http headers form the response
+     * @param array $httpResponseHeaders [] the http headers form the response
      * @param $httpResponseStatus int the http status code from the respsone
      * @param $pageContent string content of the page evaluated or not
      * @param $pageEvaluated bool page was evaluated meaning the $pageContent might be changed by javascript
@@ -34,9 +33,9 @@ class SearchEngineResponse
      */
     public function __construct(
         array $httpResponseHeaders,
-        $httpResponseStatus,
-        $pageContent,
-        $pageEvaluated,
+        int $httpResponseStatus,
+        string $pageContent,
+        bool $pageEvaluated,
         UrlArchive $initialUrl,
         UrlArchive $effectiveUrl,
         ProxyInterface $proxy = null
@@ -109,6 +108,7 @@ class SearchEngineResponse
      */
     public function getPageContent()
     {
+//        $this->pageContent = preg_replace('/^.*?(<body)/is','$1', $this->pageContent);
         return $this->pageContent;
     }
 

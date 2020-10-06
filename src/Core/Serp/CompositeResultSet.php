@@ -57,7 +57,7 @@ class CompositeResultSet implements ResultSetInterface
     /**
      * Get all the results matching one of the given types
      * @param array ...$types
-     * @return ResultDataInterface[]
+     * @return CompositeResultSet
      */
     public function getResultsByType($types)
     {
