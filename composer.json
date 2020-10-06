@@ -31,7 +31,7 @@
 
   "require": {
     "php": ">=7.2",
-    "symfony/css-selector": "^4",
+    "symfony/css-selector": "4.4.*",
     "psr/http-message": "^1.0.0",
     "ext-dom": "*",
     "ext-libxml": "*"
